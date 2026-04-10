@@ -16,7 +16,6 @@
       rel="stylesheet"
     />
     <script defer type="module" src="/src/main.js"></script>
-    
   </head>
   <body>
     <main>
@@ -27,7 +26,7 @@
             <span class="todo__priority" data-testid="test-todo-priority"
               >High</span
             >
-            <span class="todo__status todo__status--pending">
+            <span class="todo__status todo__status--pending" aria-live="polite">
               Pending
             </span>
           </div>
@@ -94,12 +93,12 @@
           </div>
           <div>
             <h2 class="todo__title" data-testid="test-todo-title">
-              Lorem ipsum dolor sit.
+              Finalize Design System Implementation
             </h2>
             <p class="todo__description" data-testid="test-todo-description">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Excepturi possimus vitae corporis esse vero distinctio eaque.
-              Laboriosam earum totam labore.
+              Audit the current UI components for accessibility, refine the
+              color palette variables for better contrast, and document the new
+              state color tokens for the development team.
             </p>
 
             <ul
@@ -107,8 +106,9 @@
               class="todo__caterories"
               data-testid="test-todo-tags"
             >
-              <li class="todo__category">Teaching</li>
-              <li class="todo__category">Practicals</li>
+              <li class="todo__category">Design</li>
+              <li class="todo__category">DevOps</li>
+              <li class="todo__category">Accessibility</li>
             </ul>
           </div>
         </section>
@@ -124,12 +124,231 @@
           </p>
           <p class="todo__datetime">
             <span class="todo__datetime-label">Time remaining</span>
-            <span class="todo__remainingTime" data-testid="test-todo-time-remaining"
+            <span
+              class="todo__remainingTime"
+              data-testid="test-todo-time-remaining"
               >10 days</span
             >
           </p>
         </footer>
       </article>
-    </main>
-  </body>
-</html>
+ 
+      <article class="todo" data-testid="test-todo-card" data-taskid="002">
+        <header class="todo__header">
+          <div class="todo__info">
+            <span class="todo__priority" data-testid="test-todo-priority"
+              >Medium</span
+            >
+            <span class="todo__status todo__status--in-progress">
+              In Progress
+            </span>
+          </div>
+          <div class="todo__controls">
+            <button
+              type="button"
+              class="btn"
+              data-testid="test-todo-edit-button"
+              aria-label="edit task"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-pencil-icon lucide-pencil"
+              >
+                <path
+                  d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
+                />
+                <path d="m15 5 4 4" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="btn"
+              data-testid="test-todo--button"
+              aria-label="delete task"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-trash-icon lucide-trash"
+              >
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                <path d="M3 6h18" />
+                <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+              </svg>
+            </button>
+          </div>
+        </header>
+        <section class="todo__body">
+          <div>
+            <input
+              type="checkbox"
+              name="markAsComplete"
+              id="markAsComplete002"
+              data-testid="test-todo-complete-toggle"
+              class="todo__checkbox"
+              aria-label="mark as done"
+            />
+          </div>
+          <div>
+            <h2 class="todo__title" data-testid="test-todo-title">
+              Refactor API Data Layer
+            </h2>
+            <p class="todo__description" data-testid="test-todo-description">
+              Migrate current fetch calls to a centralized handler to improve
+              error handling and data consistency.
+            </p>
+            <ul
+              role="list"
+              class="todo__caterories"
+              data-testid="test-todo-tags"
+            >
+              <li class="todo__category">Backend</li>
+              <li class="todo__category">Performance</li>
+            </ul>
+          </div>
+        </section>
+        <footer class="todo__footer">
+          <p class="todo__datetime">
+            <span class="todo__datetime-label">Due date</span>
+            <time
+              datetime="2026-04-15T12:00"
+              class="todo__due-date"
+              data-testid="test-todo-due-date"
+              >APR 15TH, 2026</time
+            >
+          </p>
+          <p class="todo__datetime">
+            <span class="todo__datetime-label">Time remaining</span>
+            <span
+              class="todo__remainingTime"
+              data-testid="test-todo-time-remaining"
+            ></span>
+          </p>
+        </footer>
+      </article>
+
+      <article class="todo" data-testid="test-todo-card" data-taskid="003">
+        <header class="todo__header">
+          <div class="todo__info">
+            <span class="todo__priority" data-testid="test-todo-priority"
+              >Low</span
+            >
+            <span class="todo__status todo__status--pending"> Pending </span>
+          </div>
+          <div class="todo__controls">
+            <button
+              type="button"
+              class="btn"
+              data-testid="test-todo-edit-button"
+              aria-label="edit task"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-pencil-icon lucide-pencil"
+              >
+                <path
+                  d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
+                />
+                <path d="m15 5 4 4" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="btn"
+              data-testid="test-todo--button"
+              aria-label="delete task"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-trash-icon lucide-trash"
+              >
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                <path d="M3 6h18" />
+                <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+              </svg>
+            </button>
+          </div>
+        </header>
+        <section class="todo__body">
+          <div>
+            <input
+              type="checkbox"
+              name="markAsComplete"
+              id="markAsComplete003"
+              data-testid="test-todo-complete-toggle"
+              class="todo__checkbox"
+              aria-label="mark as done"
+            />
+          </div>
+          <div>
+            <h2 class="todo__title" data-testid="test-todo-title">
+              Update User Documentation
+            </h2>
+            <p class="todo__description" data-testid="test-todo-description">
+              Review README.md and internal wiki for latest deployment
+              instructions.
+            </p>
+            <ul
+              role="list"
+              class="todo__caterories"
+              data-testid="test-todo-tags"
+            >
+              <li class="todo__category">Docs</li>
+              <li class="todo__category">Onboarding</li>
+            </ul>
+          </div>
+        </section>
+        <footer class="todo__footer">
+          <p class="todo__datetime">
+            <span class="todo__datetime-label">Due date</span>
+            <time
+              datetime="2026-04-20T09:00"
+              class="todo__due-date"
+              data-testid="test-todo-due-date"
+              >APR 20TH, 2026</time
+            >
+          </p>
+          <p class="todo__datetime">
+            <span class="todo__datetime-label">Time remaining</span>
+            <span
+              class="todo__remainingTime"
+              data-testid="test-todo-time-remaining"
+            ></span>
+          </p>
+        </footer>
+      </article>
+
+     </main>
+ </body>
+ </html>

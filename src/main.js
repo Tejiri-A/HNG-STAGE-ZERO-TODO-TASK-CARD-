@@ -33,6 +33,10 @@ class Task {
       '[data-testid="test-todo-edit-button"]',
     );
     this.deleteBtn = taskEl.querySelector('[data-testid="test-todo--button"]');
+    
+    // Save original status and class to revert correctly
+    this.originalStatus = this.statusEl.innerText;
+    this.originalClass = this.statusEl.className;
 
     this.init();
   }
@@ -56,13 +60,15 @@ class Task {
 
   handleStatusChange() {
     if (this.checkboxEl.checked) {
+      this.checkboxEl.setAttribute("aria-label", "mark as in-progress");
       this.statusEl.textContent = "Done";
       this.statusEl.className = "todo__status todo__status--done";
       this.titleEl.style.textDecoration = "line-through";
       this.titleEl.style.opacity = "0.6";
     } else {
-      this.statusEl.textContent = "Pending";
-      this.statusEl.className = "todo__status todo__status--pending";
+      this.checkboxEl.setAttribute("aria-label", "mark as done");
+      this.statusEl.textContent = this.originalStatus;
+      this.statusEl.className = this.originalClass;
       this.titleEl.style.textDecoration = "none";
       this.titleEl.style.opacity = "1";
     }
@@ -73,7 +79,6 @@ class Task {
     const targetDate = this.dueDate;
 
     const diffInSeconds = Math.floor((targetDate - now) / 1000);
-
 
     // Define thresholds in seconds
     const units = [
@@ -86,7 +91,7 @@ class Task {
     for (const unit of units) {
       if (Math.abs(diffInSeconds) >= unit.seconds || unit.label === "second") {
         const value = Math.floor(diffInSeconds / unit.seconds);
-        
+
         this.updateTimeStyle(diffInSeconds);
 
         const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
