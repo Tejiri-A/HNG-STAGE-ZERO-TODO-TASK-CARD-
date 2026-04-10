@@ -15,17 +15,23 @@
   </head>
   <body>
     <main>
-      <h1>TODO TASK CARD UI</h1>
-      <article class="todo" data-testid="test-todo-card">
-        <header>
-          <span class="todo__priority" data-testid="test-todo-priority"
-            >High</span
-          >
+      <h1 class="title">TODO TASK CARD UI</h1>
+      <article class="todo" data-testid="test-todo-card" data-taskid="001">
+        <header class="todo__header">
+          <div class="todo__info">
+            <span class="todo__priority" data-testid="test-todo-priority"
+              >High</span
+            >
+            <span class="todo__status todo__status--pending">
+              Pending
+            </span>
+          </div>
           <div class="todo__controls">
             <button
               type="button"
               class="btn"
               data-testid="test-todo-edit-button"
+              aria-label="edit task"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +51,12 @@
                 <path d="m15 5 4 4" />
               </svg>
             </button>
-            <button type="button" class="btn" data-testid="test-todo--button">
+            <button
+              type="button"
+              class="btn"
+              data-testid="test-todo--button"
+              aria-label="delete task"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -65,13 +76,15 @@
             </button>
           </div>
         </header>
-        <main>
+        <section class="todo__body">
           <div>
             <input
               type="checkbox"
               name="markAsComplete"
               id="markAsComplete"
               data-testid="test-todo-complete-toggle"
+              class="todo__checkbox"
+              aria-label="mark as done"
             />
           </div>
           <div>
@@ -83,29 +96,33 @@
               Excepturi possimus vitae corporis esse vero distinctio eaque.
               Laboriosam earum totam labore.
             </p>
-          </div>
-        </main>
-        <footer>
-          <ul class="todo__caterories" data-testid="test-todo-tags">
-            <li>Teaching</li>
-            <li>Practicals</li>
-          </ul>
 
-          <div class="todo__datetime">
-            <span>
-              Due date:
-              <time
-                datetime="2001-05-15T19:00"
-                class="todo__due-date"
-                data-testid="test-todo-due-date"
-                >May 15</time
-              >
-            </span>
-            <span>
-              Time remaining:
-              <time datetime="" data-testid="test-todo-time-remaining"></time>
-            </span>
+            <ul
+              role="list"
+              class="todo__caterories"
+              data-testid="test-todo-tags"
+            >
+              <li class="todo__category">Teaching</li>
+              <li class="todo__category">Practicals</li>
+            </ul>
           </div>
+        </section>
+        <footer class="todo__footer">
+          <p class="todo__datetime">
+            <span class="todo__datetime-label">Due date</span>
+            <time
+              datetime="2026-04-12T20:00"
+              class="todo__due-date"
+              data-testid="test-todo-due-date"
+              >May 15th, 2026</time
+            >
+          </p>
+          <p class="todo__datetime">
+            <span class="todo__datetime-label">Time remaining</span>
+            <span class="todo__remainingTime" data-testid="test-todo-time-remaining"
+              >10 days</span
+            >
+          </p>
         </footer>
       </article>
     </main>
