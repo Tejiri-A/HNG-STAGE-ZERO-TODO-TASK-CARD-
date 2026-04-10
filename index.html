@@ -5,9 +5,109 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo Task Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script defer type="module" src="/src/main.js"></script>
   </head>
   <body>
-    
+    <main>
+      <h1>TODO TASK CARD UI</h1>
+      <article class="todo" data-testid="test-todo-card">
+        <header>
+          <span class="todo__priority" data-testid="test-todo-priority"
+            >High</span
+          >
+          <div class="todo__controls">
+            <button
+              type="button"
+              class="btn"
+              data-testid="test-todo-edit-button"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-pencil-icon lucide-pencil"
+              >
+                <path
+                  d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
+                />
+                <path d="m15 5 4 4" />
+              </svg>
+            </button>
+            <button type="button" class="btn" data-testid="test-todo--button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-trash-icon lucide-trash"
+              >
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                <path d="M3 6h18" />
+                <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+              </svg>
+            </button>
+          </div>
+        </header>
+        <main>
+          <div>
+            <input
+              type="checkbox"
+              name="markAsComplete"
+              id="markAsComplete"
+              data-testid="test-todo-complete-toggle"
+            />
+          </div>
+          <div>
+            <h2 class="todo__title" data-testid="test-todo-title">
+              Lorem ipsum dolor sit.
+            </h2>
+            <p class="todo__description" data-testid="test-todo-description">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Excepturi possimus vitae corporis esse vero distinctio eaque.
+              Laboriosam earum totam labore.
+            </p>
+          </div>
+        </main>
+        <footer>
+          <ul class="todo__caterories" data-testid="test-todo-tags">
+            <li>Teaching</li>
+            <li>Practicals</li>
+          </ul>
+
+          <div class="todo__datetime">
+            <span>
+              Due date:
+              <time
+                datetime="2001-05-15T19:00"
+                class="todo__due-date"
+                data-testid="test-todo-due-date"
+                >May 15</time
+              >
+            </span>
+            <span>
+              Time remaining:
+              <time datetime="" data-testid="test-todo-time-remaining"></time>
+            </span>
+          </div>
+        </footer>
+      </article>
+    </main>
   </body>
 </html>
