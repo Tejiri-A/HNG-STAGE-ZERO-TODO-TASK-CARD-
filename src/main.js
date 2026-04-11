@@ -75,28 +75,39 @@ class Task {
   }
 
   calculateRemainingTime() {
-    const now = Date.now();
+    const now = new Date();
     const targetDate = this.dueDate;
+    const diffInMilliseconds = targetDate - now;
+    const diffInSeconds = Math.floor(diffInMilliseconds / 1000);
+    const absDiff = Math.abs(diffInSeconds);
 
-    const diffInSeconds = Math.floor((targetDate - now) / 1000);
+    this.updateTimeStyle(diffInSeconds);
 
-    // Define thresholds in seconds
+    // If within 1 minute of the deadline (future or past), say "Due now!"
+    if (absDiff < 60) {
+      return "Due now!";
+    }
+
     const units = [
       { label: "day", seconds: 86400 },
       { label: "hour", seconds: 3600 },
       { label: "minute", seconds: 60 },
-      { label: "second", seconds: 1 },
     ];
 
-    for (const unit of units) {
-      if (Math.abs(diffInSeconds) >= unit.seconds || unit.label === "second") {
-        const value = Math.floor(diffInSeconds / unit.seconds);
+    // Find the largest unit that fits
+    const unit = units.find((u) => absDiff >= u.seconds) || units[units.length - 1];
+    const value = Math.floor(absDiff / unit.seconds);
+    const plural = value !== 1 ? "s" : "";
 
-        this.updateTimeStyle(diffInSeconds);
-
-        const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
-        return rtf.format(value, unit.label);
+    if (diffInSeconds > 0) {
+      // Future
+      if (unit.label === "day" && value === 1) {
+        return "Due tomorrow";
       }
+      return `Due in ${value} ${unit.label}${plural}`;
+    } else {
+      // Past
+      return `Overdue by ${value} ${unit.label}${plural}`;
     }
   }
 
