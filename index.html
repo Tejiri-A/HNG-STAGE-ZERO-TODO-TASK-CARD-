@@ -35,7 +35,6 @@
             </span>
             <select
               name="status"
-              id="todoStatusControl"
               data-testid="test-todo-status-control"
               class="todo__status-control"
               aria-label="update status"
@@ -73,7 +72,7 @@
             <button
               type="button"
               class="btn"
-              data-testid="test-todo--button"
+              data-testid="test-todo-delete-button"
               aria-label="delete task"
             >
               <svg
@@ -100,7 +99,7 @@
             <input
               type="checkbox"
               name="markAsComplete"
-              id="markAsComplete"
+              id="markAsComplete001"
               data-testid="test-todo-complete-toggle"
               class="todo__checkbox"
               aria-label="mark as done"
@@ -241,6 +240,7 @@
               name="status"
               class="todo__status-control"
               data-testid="test-todo-status-control"
+              aria-label="update status"
             >
               <option value="pending">Pending</option>
               <option value="in progress">In Progress</option>
@@ -275,7 +275,7 @@
             <button
               type="button"
               class="btn"
-              data-testid="test-todo--button"
+              data-testid="test-todo-delete-button"
               aria-label="delete task"
             >
               <svg
@@ -377,12 +377,14 @@
               <button
                 type="submit"
                 class="todo__form-btn todo__update-btn btn--primary"
+                data-testid="test-todo-save-button"
               >
                 Save
               </button>
               <button
                 type="button"
                 class="todo__form-btn todo__cancel-btn btn--secondary"
+                data-testid="test-todo-cancel-button"
               >
                 Cancel
               </button>
@@ -426,6 +428,7 @@
               name="status"
               class="todo__status-control"
               data-testid="test-todo-status-control"
+              aria-label="update status"
             >
               <option value="pending">Pending</option>
               <option value="in progress">In Progress</option>
@@ -460,7 +463,7 @@
             <button
               type="button"
               class="btn"
-              data-testid="test-todo--button"
+              data-testid="test-todo-delete-button"
               aria-label="delete task"
             >
               <svg
@@ -562,12 +565,14 @@
               <button
                 type="submit"
                 class="todo__form-btn todo__update-btn btn--primary"
+                data-testid="test-todo-save-button"
               >
                 Save
               </button>
               <button
                 type="button"
                 class="todo__form-btn todo__cancel-btn btn--secondary"
+                data-testid="test-todo-cancel-button"
               >
                 Cancel
               </button>

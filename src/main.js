@@ -59,7 +59,7 @@ class Task {
     this.editBtn = taskEl.querySelector(
       '[data-testid="test-todo-edit-button"]',
     );
-    this.deleteBtn = taskEl.querySelector('[data-testid="test-todo--button"]');
+    this.deleteBtn = taskEl.querySelector('[data-testid="test-todo-delete-button"]');
     // this.collapseBtn = taskEl.querySelector(
     //   'data-testid="test-todo-expand-toggle"',
     // );
