@@ -23,12 +23,21 @@
       <article class="todo" data-testid="test-todo-card" data-taskid="001">
         <header class="todo__header">
           <div class="todo__info">
+            <span
+              class="todo__priority-indicator"
+              data-testid="test-todo-priority-indicator"
+            ></span>
             <span class="todo__priority" data-testid="test-todo-priority"
               >High</span
             >
             <span class="todo__status todo__status--pending" aria-live="polite">
               Pending
             </span>
+            <select name="status" id="todoStatusControl" data-testid="test-todo-status-control" class="todo__status-control" >
+              <option value="pending">Pending</option>
+              <option value="in progress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
           </div>
           <div class="todo__controls">
             <button
@@ -91,7 +100,7 @@
               aria-label="mark as done"
             />
           </div>
-          <div class="todo__content" style="display: none">
+          <div class="todo__content">
             <h2 class="todo__title" data-testid="test-todo-title">
               Finalize Design System Implementation
             </h2>
@@ -111,9 +120,13 @@
               <li class="todo__category">Accessibility</li>
             </ul>
           </div>
-          <div class="todo__form" data-testid="test-todo-edit-form">
+          <form
+            class="todo__form"
+            data-testid="test-todo-edit-form"
+            style="display: none"
+          >
             <div class="todo__form-field">
-              <label for="title">Title</label>
+              <label>Title</label>
               <input
                 type="text"
                 name="title"
@@ -121,20 +134,18 @@
               />
             </div>
             <div class="todo__form-field">
-              <label for="description">Description</label>
+              <label>Description</label>
               <textarea
                 name="description"
-                id="description"
                 data-testid="test-todo-edit-description-input"
               ></textarea>
             </div>
 
             <div class="flex-container">
               <div class="todo__form-field">
-                <label for="priority">Priority</label>
+                <label>Priority</label>
                 <select
                   name="priority"
-                  id="priority"
                   data-testid="test-todo-edit-priority-select"
                 >
                   <option value="low">Low</option>
@@ -143,21 +154,32 @@
                 </select>
               </div>
               <div class="todo__form-field">
-                <label for="dueDate">Due Date</label>
+                <label>Due Date</label>
                 <input
                   type="date"
                   name="dueDate"
-                  id="dueDate"
                   data-testid="test-todo-edit-due-date-input"
                 />
               </div>
             </div>
 
             <div class="flex-container">
-              <button type="submit" class="todo__form-btn btn--primary">Save</button>
-              <button type="button" class="todo__form-btn btn--secondary">Cancel</button>
+              <button
+                data-testid="test-todo-save-button"
+                type="submit"
+                class="todo__form-btn todo__update-btn btn--primary"
+              >
+                Save
+              </button>
+              <button
+                data-testid="test-todo-cancel-button"
+                type="button"
+                class="todo__form-btn todo__cancel-btn btn--secondary"
+              >
+                Cancel
+              </button>
             </div>
-          </div>
+          </form>
         </section>
         <footer class="todo__footer">
           <p class="todo__datetime">
@@ -183,12 +205,21 @@
       <article class="todo" data-testid="test-todo-card" data-taskid="002">
         <header class="todo__header">
           <div class="todo__info">
+            <span
+              class="todo__priority-indicator"
+              data-testid="test-todo-priority-indicator"
+            ></span>
             <span class="todo__priority" data-testid="test-todo-priority"
               >Medium</span
             >
-            <span class="todo__status todo__status--in-progress">
+            <span class="todo__status todo__status--in-progress" aria-live="polite">
               In Progress
             </span>
+            <select name="status" class="todo__status-control" data-testid="test-todo-status-control">
+              <option value="pending">Pending</option>
+              <option value="in progress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
           </div>
           <div class="todo__controls">
             <button
@@ -251,7 +282,7 @@
               aria-label="mark as done"
             />
           </div>
-          <div>
+          <div class="todo__content">
             <h2 class="todo__title" data-testid="test-todo-title">
               Refactor API Data Layer
             </h2>
@@ -268,6 +299,64 @@
               <li class="todo__category">Performance</li>
             </ul>
           </div>
+          <form
+            class="todo__form"
+            data-testid="test-todo-edit-form"
+            style="display: none"
+          >
+            <div class="todo__form-field">
+              <label>Title</label>
+              <input
+                type="text"
+                name="title"
+                data-testid="test-todo-edit-title-input"
+              />
+            </div>
+            <div class="todo__form-field">
+              <label>Description</label>
+              <textarea
+                name="description"
+                data-testid="test-todo-edit-description-input"
+              ></textarea>
+            </div>
+
+            <div class="flex-container">
+              <div class="todo__form-field">
+                <label>Priority</label>
+                <select
+                  name="priority"
+                  data-testid="test-todo-edit-priority-select"
+                >
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+              <div class="todo__form-field">
+                <label>Due Date</label>
+                <input
+                  type="date"
+                  name="dueDate"
+                  data-testid="test-todo-edit-due-date-input"
+                />
+              </div>
+            </div>
+
+            <div class="flex-container">
+              <button
+                type="submit"
+                class="todo__form-btn todo__update-btn btn--primary"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                class="todo__form-btn todo__cancel-btn btn--secondary"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
         </section>
         <footer class="todo__footer">
           <p class="todo__datetime">
@@ -292,10 +381,19 @@
       <article class="todo" data-testid="test-todo-card" data-taskid="003">
         <header class="todo__header">
           <div class="todo__info">
+            <span
+              class="todo__priority-indicator"
+              data-testid="test-todo-priority-indicator"
+            ></span>
             <span class="todo__priority" data-testid="test-todo-priority"
               >Low</span
             >
-            <span class="todo__status todo__status--pending"> Pending </span>
+            <span class="todo__status todo__status--pending" aria-live="polite"> Pending </span>
+            <select name="status" class="todo__status-control" data-testid="test-todo-status-control">
+              <option value="pending">Pending</option>
+              <option value="in progress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
           </div>
           <div class="todo__controls">
             <button
@@ -358,7 +456,7 @@
               aria-label="mark as done"
             />
           </div>
-          <div>
+          <div class="todo__content">
             <h2 class="todo__title" data-testid="test-todo-title">
               Update User Documentation
             </h2>
@@ -375,6 +473,64 @@
               <li class="todo__category">Onboarding</li>
             </ul>
           </div>
+          <form
+            class="todo__form"
+            data-testid="test-todo-edit-form"
+            style="display: none"
+          >
+            <div class="todo__form-field">
+              <label>Title</label>
+              <input
+                type="text"
+                name="title"
+                data-testid="test-todo-edit-title-input"
+              />
+            </div>
+            <div class="todo__form-field">
+              <label>Description</label>
+              <textarea
+                name="description"
+                data-testid="test-todo-edit-description-input"
+              ></textarea>
+            </div>
+
+            <div class="flex-container">
+              <div class="todo__form-field">
+                <label>Priority</label>
+                <select
+                  name="priority"
+                  data-testid="test-todo-edit-priority-select"
+                >
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+              <div class="todo__form-field">
+                <label>Due Date</label>
+                <input
+                  type="date"
+                  name="dueDate"
+                  data-testid="test-todo-edit-due-date-input"
+                />
+              </div>
+            </div>
+
+            <div class="flex-container">
+              <button
+                type="submit"
+                class="todo__form-btn todo__update-btn btn--primary"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                class="todo__form-btn todo__cancel-btn btn--secondary"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
         </section>
         <footer class="todo__footer">
           <p class="todo__datetime">

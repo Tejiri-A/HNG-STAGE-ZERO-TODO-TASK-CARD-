@@ -249,6 +249,25 @@ main {
   }
 }
 
+.todo__priority-indicator{
+  --size: 1rem;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--radius-full);
+  background-color: var(--clr-primary-500);
+  display: inline-block;
+}
+
+.todo__priority-indicator--low{
+  background-color: var(--clr-success-600);
+}
+.todo__priority-indicator--medium{
+  background-color: var(--clr-primary-600);
+}
+.todo__priority-indicator--high{
+  background-color: var(--clr-error-600);
+}
+
 .todo__status {
   padding: var(--space-1) var(--space-2);
 
