@@ -242,7 +242,7 @@ class Task {
       this.descriptionEl.classList.add("todo__description--collapsed");
       collapseContainer.insertAdjacentHTML(
         "beforeend",
-        `<button type="button" class="todo__collapse-btn" data-testid="test-todo-expand-toggle" aria-label="Show more" aria-expanded="false" aria-controls="collapsibleContainer">
+        `<button type="button" class="todo__collapse-btn" data-testid="test-todo-expand-toggle" aria-label="Show more" aria-expanded="false" aria-controls="collapsibleContainer-${this.id}">
                 Show more
               </button>`,
       );
@@ -314,13 +314,19 @@ class Task {
 
   updateTimeStyle(diffInSeconds) {
     let color = "var(--clr-success-600)"; // Default: Distant
+    const overdueIndicator = this.taskEl.querySelector('[data-testid="test-todo-overdue-indicator"]');
 
-    if (diffInSeconds < 0) {
+    if (diffInSeconds < 0 && this.statusControlEl && this.statusControlEl.value !== "done") {
       color = "var(--clr-error-600)"; // Overdue
+      if (overdueIndicator) overdueIndicator.style.display = "inline-block";
     } else if (diffInSeconds < 86400) {
       color = "var(--clr-warning-600)"; // Due today (within 24h)
+      if (overdueIndicator) overdueIndicator.style.display = "none";
     } else if (diffInSeconds < 259200) {
       color = "var(--clr-info-600)"; // Due soon (within 3 days)
+      if (overdueIndicator) overdueIndicator.style.display = "none";
+    } else {
+      if (overdueIndicator) overdueIndicator.style.display = "none";
     }
 
     this.timeRemainingEl.style.color = color;

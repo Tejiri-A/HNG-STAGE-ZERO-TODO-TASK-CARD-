@@ -111,6 +111,7 @@
             </h2>
             <div
               class="todo__collapsible-container"
+              id="collapsibleContainer-001"
               data-testid="test-todo-collapsible-section"
             >
               <p class="todo__description" data-testid="test-todo-description">
@@ -144,26 +145,29 @@
             style="display: none"
           >
             <div class="todo__form-field">
-              <label>Title</label>
+              <label for="title-001">Title</label>
               <input
                 type="text"
                 name="title"
+                id="title-001"
                 data-testid="test-todo-edit-title-input"
               />
             </div>
             <div class="todo__form-field">
-              <label>Description</label>
+              <label for="desc-001">Description</label>
               <textarea
                 name="description"
+                id="desc-001"
                 data-testid="test-todo-edit-description-input"
               ></textarea>
             </div>
 
             <div class="flex-container">
               <div class="todo__form-field">
-                <label>Priority</label>
+                <label for="priority-001">Priority</label>
                 <select
                   name="priority"
+                  id="priority-001"
                   data-testid="test-todo-edit-priority-select"
                 >
                   <option value="low">Low</option>
@@ -172,10 +176,11 @@
                 </select>
               </div>
               <div class="todo__form-field">
-                <label>Due Date</label>
+                <label for="dueDate-001">Due Date</label>
                 <input
                   type="date"
                   name="dueDate"
+                  id="dueDate-001"
                   data-testid="test-todo-edit-due-date-input"
                 />
               </div>
@@ -209,13 +214,16 @@
               >DUE APR 12TH, 2026</time
             >
           </p>
-          <p class="todo__datetime">
+          <p class="todo__datetime" aria-live="polite">
             <span class="todo__datetime-label">Time remaining</span>
-            <span
-              class="todo__remainingTime"
-              data-testid="test-todo-time-remaining"
-              >10 days</span
-            >
+            <span style="display: flex; gap: var(--space-2); align-items: center;">
+              <span
+                class="todo__remainingTime"
+                data-testid="test-todo-time-remaining"
+                >10 days</span
+              >
+              <span style="display: none; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; background: var(--clr-error-600); color: white; text-transform: uppercase;" data-testid="test-todo-overdue-indicator">Overdue</span>
+            </span>
           </p>
         </footer>
       </article>
@@ -314,6 +322,7 @@
             </h2>
             <div
               class="todo__collapsible-container"
+              id="collapsibleContainer-002"
               data-testid="test-todo-collapsible-section"
             >
               <p class="todo__description" data-testid="test-todo-description">
@@ -336,26 +345,29 @@
             style="display: none"
           >
             <div class="todo__form-field">
-              <label>Title</label>
+              <label for="title-002">Title</label>
               <input
                 type="text"
                 name="title"
+                id="title-002"
                 data-testid="test-todo-edit-title-input"
               />
             </div>
             <div class="todo__form-field">
-              <label>Description</label>
+              <label for="desc-002">Description</label>
               <textarea
                 name="description"
+                id="desc-002"
                 data-testid="test-todo-edit-description-input"
               ></textarea>
             </div>
 
             <div class="flex-container">
               <div class="todo__form-field">
-                <label>Priority</label>
+                <label for="priority-002">Priority</label>
                 <select
                   name="priority"
+                  id="priority-002"
                   data-testid="test-todo-edit-priority-select"
                 >
                   <option value="low">Low</option>
@@ -364,10 +376,11 @@
                 </select>
               </div>
               <div class="todo__form-field">
-                <label>Due Date</label>
+                <label for="dueDate-002">Due Date</label>
                 <input
                   type="date"
                   name="dueDate"
+                  id="dueDate-002"
                   data-testid="test-todo-edit-due-date-input"
                 />
               </div>
@@ -401,12 +414,15 @@
               >DUE APR 15TH, 2026</time
             >
           </p>
-          <p class="todo__datetime">
+          <p class="todo__datetime" aria-live="polite">
             <span class="todo__datetime-label">Time remaining</span>
-            <span
-              class="todo__remainingTime"
-              data-testid="test-todo-time-remaining"
-            ></span>
+            <span style="display: flex; gap: var(--space-2); align-items: center;">
+              <span
+                class="todo__remainingTime"
+                data-testid="test-todo-time-remaining"
+              ></span>
+              <span style="display: none; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; background: var(--clr-error-600); color: white; text-transform: uppercase;" data-testid="test-todo-overdue-indicator">Overdue</span>
+            </span>
           </p>
         </footer>
       </article>
@@ -502,6 +518,7 @@
             </h2>
             <div
               class="todo__collapsible-container"
+              id="collapsibleContainer-003"
               data-testid="test-todo-collapsible-section"
             >
               <p class="todo__description" data-testid="test-todo-description">
@@ -524,26 +541,29 @@
             style="display: none"
           >
             <div class="todo__form-field">
-              <label>Title</label>
+              <label for="title-003">Title</label>
               <input
                 type="text"
                 name="title"
+                id="title-003"
                 data-testid="test-todo-edit-title-input"
               />
             </div>
             <div class="todo__form-field">
-              <label>Description</label>
+              <label for="desc-003">Description</label>
               <textarea
                 name="description"
+                id="desc-003"
                 data-testid="test-todo-edit-description-input"
               ></textarea>
             </div>
 
             <div class="flex-container">
               <div class="todo__form-field">
-                <label>Priority</label>
+                <label for="priority-003">Priority</label>
                 <select
                   name="priority"
+                  id="priority-003"
                   data-testid="test-todo-edit-priority-select"
                 >
                   <option value="low">Low</option>
@@ -552,10 +572,11 @@
                 </select>
               </div>
               <div class="todo__form-field">
-                <label>Due Date</label>
+                <label for="dueDate-003">Due Date</label>
                 <input
                   type="date"
                   name="dueDate"
+                  id="dueDate-003"
                   data-testid="test-todo-edit-due-date-input"
                 />
               </div>
@@ -589,12 +610,15 @@
               >DUE APR 11TH, 2026</time
             >
           </p>
-          <p class="todo__datetime">
+          <p class="todo__datetime" aria-live="polite">
             <span class="todo__datetime-label">Time remaining</span>
-            <span
-              class="todo__remainingTime"
-              data-testid="test-todo-time-remaining"
-            ></span>
+            <span style="display: flex; gap: var(--space-2); align-items: center;">
+              <span
+                class="todo__remainingTime"
+                data-testid="test-todo-time-remaining"
+              ></span>
+              <span style="display: none; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; background: var(--clr-error-600); color: white; text-transform: uppercase;" data-testid="test-todo-overdue-indicator">Overdue</span>
+            </span>
           </p>
         </footer>
       </article>
